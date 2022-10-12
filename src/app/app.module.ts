@@ -9,6 +9,8 @@ import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ContenidoComponent } from './components/contenido/contenido.component';
 import { EstudiantesComponent } from './components/estudiantes/estudiantes.component';
+import { AgregarEstudiantesComponent } from './components/agregar-estudiantes/agregar-estudiantes.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -18,12 +20,14 @@ import { EstudiantesComponent } from './components/estudiantes/estudiantes.compo
     ToolbarComponent,
     NavbarComponent,
     ContenidoComponent,
-    EstudiantesComponent
+    EstudiantesComponent,
+    AgregarEstudiantesComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
