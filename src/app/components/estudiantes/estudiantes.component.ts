@@ -49,10 +49,10 @@ export class EstudiantesComponent implements OnInit, AfterViewInit  {
       panelClass: 'custom-dialog-container'
     });
     dialog.beforeClosed().subscribe(res=>{
-      let id =this.listaEstudiantes[this.listaEstudiantes.length -1].id;
-      res.id=id+1;
-      console.log(res);
-      this.listaEstudiantes.push(res);
+      this.listaEstudiantes.push({
+        ...res,
+        id:this.listaEstudiantes[this.listaEstudiantes.length -1].id+1
+      });
       this.dataSource.paginator = this.paginator;
       this._snackBar.open(`Agrego el estudiante ${res.nombre} ${res.apellido} Exitosamente`, "Cerrar", {
         duration: 3000
