@@ -9,8 +9,12 @@ import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ContenidoComponent } from './components/contenido/contenido.component';
 import { EstudiantesComponent } from './components/estudiantes/estudiantes.component';
-import { AgregarEstudiantesComponent } from './components/agregar-estudiantes/agregar-estudiantes.component';
+import { AgregarEstudiantesComponent } from './components/crud_estudiantes/agregar-estudiantes/agregar-estudiantes.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { EditarEstudiantesComponent } from './components/crud_estudiantes/editar-estudiantes/editar-estudiantes.component';
+import { EliminarEstudiantesComponent } from './components/crud_estudiantes/eliminar-estudiantes/eliminar-estudiantes.component';
+import { NombresPipe } from './pipes/nombres.pipe';
+import { TitulosDirective } from './directives/titulos.directive';
 
 
 @NgModule({
@@ -21,7 +25,11 @@ import { ReactiveFormsModule } from '@angular/forms';
     NavbarComponent,
     ContenidoComponent,
     EstudiantesComponent,
-    AgregarEstudiantesComponent
+    AgregarEstudiantesComponent,
+    EditarEstudiantesComponent,
+    EliminarEstudiantesComponent,
+    NombresPipe,
+    TitulosDirective,
   ],
   imports: [
     BrowserModule,

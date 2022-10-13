@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import {MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-agregar-estudiantes',
@@ -8,12 +8,12 @@ import { MatDialog, MatDialogRef } from '@angular/material/dialog';
   styleUrls: ['./agregar-estudiantes.component.css']
 })
 export class AgregarEstudiantesComponent implements OnInit {
-  formularioEmpleado: FormGroup;
+  formularioEstudiante: FormGroup;
   constructor(
     public dialogRef: MatDialogRef<AgregarEstudiantesComponent>,
     private fb: FormBuilder
     ) {
-    this.formularioEmpleado = fb.group({
+    this.formularioEstudiante = fb.group({
       nombre: new FormControl('',[Validators.required]),
       correo: new FormControl('',[Validators.pattern('^[a-z0-9]+@[a-z]+\\.[a-z]{2,3}$'), Validators.required]),
       apellido: new FormControl('',[Validators.required]),
@@ -23,10 +23,8 @@ export class AgregarEstudiantesComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  agregarEmpleado(){
 
-  }
   guardar(){
-    this.dialogRef.close(this.formularioEmpleado.value);
+    this.dialogRef.close(this.formularioEstudiante.value);
   }
 }

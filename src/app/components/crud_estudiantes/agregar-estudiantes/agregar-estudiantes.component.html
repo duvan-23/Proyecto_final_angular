@@ -1,35 +1,35 @@
-<h2 mat-dialog-title>Agragar Estudiantes</h2>
+<h2 mat-dialog-title [appTitulos]='false'>Agragar Estudiantes</h2>
 <mat-dialog-content class="mat-typography">
   <div class="letras">
-    <form [formGroup]="formularioEmpleado" (ngSubmit)="agregarEmpleado()">
+    <form [formGroup]="formularioEstudiante">
       <div class="form-group mb-4">
         <label for="exampleInputEmail1">Nombre Empleado</label>
         <input type="text"  formControlName="nombre" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese nombre">
-        <div class="alert alert-danger" role="alert" *ngIf="formularioEmpleado.get('nombre')?.touched && formularioEmpleado.get('nombre')?.errors?.['required']">
+        <div class="alert alert-danger" role="alert" *ngIf="formularioEstudiante.get('nombre')?.touched && formularioEstudiante.get('nombre')?.errors?.['required']">
           Campo Nombre Obligatorio
         </div>
       </div>
       <div class="form-group mb-4">
         <label for="exampleInputEmail1">Apellido Empleado</label>
         <input type="text"  formControlName="apellido" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese apellido">
-        <div class="alert alert-danger" role="alert" *ngIf="formularioEmpleado.get('apellido')?.touched && formularioEmpleado.get('apellido')?.errors?.['required']">
+        <div class="alert alert-danger" role="alert" *ngIf="formularioEstudiante.get('apellido')?.touched && formularioEstudiante.get('apellido')?.errors?.['required']">
           Campo Apellido Obligatorio
         </div>
       </div>
       <div class="form-group mb-4">
         <label for="exampleInputEmail1">Edad</label>
         <input type="number"  formControlName="edad" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese edad">
-        <div class="alert alert-danger" role="alert" *ngIf="formularioEmpleado.get('edad')?.touched && formularioEmpleado.get('edad')?.errors?.['required']">
+        <div class="alert alert-danger" role="alert" *ngIf="formularioEstudiante.get('edad')?.touched && formularioEstudiante.get('edad')?.errors?.['required']">
           Campo Apellido Obligatorio
         </div>
       </div>
       <div class="form-group mb-4" >
         <label for="exampleFormControlInput1">Email address</label>
         <input type="email" formControlName="correo" class="form-control" id="exampleFormControlInput1" placeholder="Ingrese  Correo">
-        <div class="alert alert-danger" role="alert" *ngIf="formularioEmpleado.get('correo')?.touched && formularioEmpleado.get('correo')?.errors?.['required']">
+        <div class="alert alert-danger" role="alert" *ngIf="formularioEstudiante.get('correo')?.touched && formularioEstudiante.get('correo')?.errors?.['required']">
           Campo Correo obligatorio
         </div>
-        <div class="alert alert-danger" role="alert" *ngIf="formularioEmpleado.get('correo')?.touched && formularioEmpleado.get('correo')?.errors?.['pattern']">
+        <div class="alert alert-danger" role="alert" *ngIf="formularioEstudiante.get('correo')?.touched && formularioEstudiante.get('correo')?.errors?.['pattern']">
           El formato de correo no es correcto
         </div>
       </div>
@@ -38,7 +38,7 @@
         <select formControlName="cargo" class="form-select" id="exampleFormControlSelect1">
           <option *ngFor="let cargo of listaCargos" [ngValue]="cargo">{{cargo}}</option>
         </select>
-        <div class="alert alert-danger" role="alert" *ngIf="formularioEmpleado.get('cargo')?.touched && formularioEmpleado.get('cargo')?.errors?.['required']">
+        <div class="alert alert-danger" role="alert" *ngIf="formularioEstudiante.get('cargo')?.touched && formularioEstudiante.get('cargo')?.errors?.['required']">
           Campo Cargo obligatorio
         </div>
       </div>
@@ -47,16 +47,16 @@
         <select formControlName="tienda" class="form-select" id="exampleFormControlSelect1">
           <option *ngFor="let tienda of listaTiendas" [ngValue]="tienda.tienda">{{tienda.nombre}}</option>
         </select>
-        <div class="alert alert-danger" role="alert" *ngIf="formularioEmpleado.get('tienda')?.touched && formularioEmpleado.get('tienda')?.errors?.['required']">
+        <div class="alert alert-danger" role="alert" *ngIf="formularioEstudiante.get('tienda')?.touched && formularioEstudiante.get('tienda')?.errors?.['required']">
           Campo tienda obligatorio
         </div>
       </div> -->
       <!-- <div class="text-center">
-        <button type="submit" class="btn btn-primary mt-4" [disabled]="formularioEmpleado.invalid">Guardar</button>
+        <button type="submit" class="btn btn-primary mt-4" [disabled]="formularioEstudiante.invalid">Guardar</button>
       </div> -->
       <mat-dialog-actions align="end">
-        <button mat-flat-button type="submit"  color="primary" [disabled]="formularioEmpleado.invalid" cdkFocusInitial (click)="guardar()">Guardar</button>
-        <button mat-flat-button color="warn" [mat-dialog-close]="true" >Cancelar</button>
+        <button mat-raised-button type="submit"  color="primary" [disabled]="formularioEstudiante.invalid" cdkFocusInitial (click)="guardar()">Guardar</button>
+        <button mat-raised-button color="warn" [mat-dialog-close]="true" >Cancelar</button>
       </mat-dialog-actions>
     </form>
   </div>
