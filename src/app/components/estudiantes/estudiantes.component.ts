@@ -34,7 +34,7 @@ export class EstudiantesComponent implements OnInit, AfterViewInit  {
   filtrarNombre(event: Event){
     const valorObtenido = (event.target as HTMLInputElement).value;
     this.dataSource.filterPredicate= function(estudiante: Estudiantes, filtro: string){
-      return estudiante.nombre.toLocaleLowerCase().includes(filtro.toLocaleLowerCase());
+      return estudiante.nombre.toLocaleLowerCase().includes(filtro.toLocaleLowerCase()) ||estudiante.apellido.toLocaleLowerCase().includes(filtro.toLocaleLowerCase());
     };
     this.dataSource.filter = valorObtenido.trim().toLocaleLowerCase();
   }

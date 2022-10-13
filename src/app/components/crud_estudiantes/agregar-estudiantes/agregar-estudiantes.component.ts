@@ -15,7 +15,7 @@ export class AgregarEstudiantesComponent implements OnInit {
     ) {
     this.formularioEstudiante = fb.group({
       nombre: new FormControl('',[Validators.required]),
-      correo: new FormControl('',[Validators.pattern('^[a-z0-9]+@[a-z]+\\.[a-z]{2,3}$'), Validators.required]),
+      correo: new FormControl('',[Validators.pattern('^[A-Za-z0-9]+@[A-Za-z]+\\.[A-Za-z]{2,3}$'), Validators.required]),
       apellido: new FormControl('',[Validators.required]),
       edad: new FormControl('',[Validators.required])
     });
