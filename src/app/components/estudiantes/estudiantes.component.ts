@@ -19,7 +19,7 @@ import { EliminarEstudiantesComponent } from '../crud_estudiantes/eliminar-estud
 export class EstudiantesComponent implements OnInit, AfterViewInit  {
   listaEstudiantes: Estudiantes[]=estudiantes;
   estudiante_edit!: any;
-  columnas: string[] = ['id','nombre','correo','edad','acciones'];
+  columnas: string[] = ['id','nombre','correo','edad','curso','acciones'];
   dataSource: MatTableDataSource<Estudiantes> = new MatTableDataSource<Estudiantes>(this.listaEstudiantes);
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   constructor(private dialog: MatDialog,private _snackBar: MatSnackBar) { }
@@ -53,6 +53,7 @@ export class EstudiantesComponent implements OnInit, AfterViewInit  {
       panelClass: 'custom-dialog-container'
     });
     dialog.beforeClosed().subscribe(res=>{
+      console.log(res);
       if(res.nombre){
         this.listaEstudiantes.push({
           ...res,

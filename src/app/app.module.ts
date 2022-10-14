@@ -15,6 +15,14 @@ import { EditarEstudiantesComponent } from './components/crud_estudiantes/editar
 import { EliminarEstudiantesComponent } from './components/crud_estudiantes/eliminar-estudiantes/eliminar-estudiantes.component';
 import { NombresPipe } from './pipes/nombres.pipe';
 import { TitulosDirective } from './directives/titulos.directive';
+import { CursosComponent } from './components/cursos/cursos.component';
+import { MatriculasPipe } from './pipes/matriculas.pipe';
+import { FiltroCursosPipe } from './pipes/filtro-cursos.pipe';
+import { FormsModule } from '@angular/forms';
+import { MatriculaStyleDirective } from './directives/matricula-style.directive';
+import { ClasesComponent } from './components/clases/clases.component';
+import { AgregarClaseComponent } from './components/crud_clase/agregar-clase/agregar-clase.component';
+
 
 
 @NgModule({
@@ -30,12 +38,19 @@ import { TitulosDirective } from './directives/titulos.directive';
     EliminarEstudiantesComponent,
     NombresPipe,
     TitulosDirective,
+    CursosComponent,
+    MatriculasPipe,
+    FiltroCursosPipe,
+    MatriculaStyleDirective,
+    ClasesComponent,
+    AgregarClaseComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MaterialModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

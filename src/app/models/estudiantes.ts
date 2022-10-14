@@ -4,4 +4,5 @@ export interface Estudiantes{
   apellido: string;
   correo:string;
   edad:number;
+  nombre_curso:string;
 }

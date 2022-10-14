@@ -33,27 +33,15 @@
           El formato de correo no es correcto
         </div>
       </div>
-      <!-- <div class="form-group mb-4" >
-        <label for="exampleFormControlSelect1">Cargo del Empleado</label>
-        <select formControlName="cargo" class="form-select" id="exampleFormControlSelect1">
-          <option *ngFor="let cargo of listaCargos" [ngValue]="cargo">{{cargo}}</option>
+      <div class="form-group mb-4" >
+        <label for="exampleFormControlSelect1">Curso</label>
+        <select formControlName="nombre_curso" class="form-select" id="exampleFormControlSelect1">
+          <option *ngFor="let curso of cursos2" [ngValue]="curso.nombre+' '+curso.comision">{{curso.nombre}} {{curso.comision}}</option>
         </select>
-        <div class="alert alert-danger" role="alert" *ngIf="formularioEstudiante.get('cargo')?.touched && formularioEstudiante.get('cargo')?.errors?.['required']">
+        <div class="alert alert-danger" role="alert" *ngIf="formularioEstudiante.get('nombre_curso')?.touched && formularioEstudiante.get('nombre_curso')?.errors?.['required']">
           Campo Cargo obligatorio
         </div>
       </div>
-      <div class="form-group mb-4">
-        <label for="exampleFormControlSelect1">Tienda donde trabaja el empleado</label>
-        <select formControlName="tienda" class="form-select" id="exampleFormControlSelect1">
-          <option *ngFor="let tienda of listaTiendas" [ngValue]="tienda.tienda">{{tienda.nombre}}</option>
-        </select>
-        <div class="alert alert-danger" role="alert" *ngIf="formularioEstudiante.get('tienda')?.touched && formularioEstudiante.get('tienda')?.errors?.['required']">
-          Campo tienda obligatorio
-        </div>
-      </div> -->
-      <!-- <div class="text-center">
-        <button type="submit" class="btn btn-primary mt-4" [disabled]="formularioEstudiante.invalid">Guardar</button>
-      </div> -->
       <mat-dialog-actions align="end">
         <button mat-raised-button type="submit"  color="primary" [disabled]="formularioEstudiante.invalid" cdkFocusInitial (click)="guardar()">Guardar</button>
         <button mat-raised-button color="warn" [mat-dialog-close]="true" >Cancelar</button>
